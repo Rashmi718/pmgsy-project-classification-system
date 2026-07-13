@@ -1,0 +1,43 @@
+spring:
+  application:
+    name: pmgsy-scheme-classifier
+
+server:
+  port: ${APP_SERVER_PORT:8080}
+
+app:
+  name: PMGSY Scheme Classifier
+  version: 1.0.0
+  status: Running
+
+ibm:
+  watsonx:
+    api-key: ${IBM_API_KEY:}
+    deployment-endpoint: ${IBM_DEPLOYMENT_ENDPOINT:}
+    deployment-id: ${IBM_DEPLOYMENT_ID:}
+    api-version: ${IBM_API_VERSION:2021-05-01}
+    token-url: ${IBM_TOKEN_URL:https://iam.cloud.ibm.com/identity/token}
+    connect-timeout-ms: 3000
+    read-timeout-ms: 10000
+
+swagger:
+  title: PMGSY Scheme Classifier API
+  description: Enterprise-grade API for predicting PMGSY scheme type from rural infrastructure characteristics.
+  version: 1.0.0
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      show-details: always
+
+logging:
+  level:
+    root: INFO
+    com.pmgsy.classifier: DEBUG
+    org.springframework.web: INFO
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%thread] %logger{36} - %msg%n"
