@@ -147,13 +147,3 @@ Validation includes:
 - request consistency rules (sanctioned/completed/balance)
 
 Global exception handling maps known errors (validation, malformed body, IBM API failures, timeouts, runtime errors) to standardized API responses.
-
-## IBM Cloud Deployment Notes
-
-Suitable for IBM Cloud Code Engine or Cloud Foundry style deployment with environment variable-based configuration.
-
-## Security Notes
-
-- Never commit `.env`.
-- Rotate IBM API keys if accidentally exposed.
-- Prefer IBM Secrets Manager or platform secret stores in production.
